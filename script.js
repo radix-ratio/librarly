@@ -1,3 +1,5 @@
+'use strict';
+    
 const myLibrary = [];
 
 function Book(title, author, pages) {
