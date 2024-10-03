@@ -57,3 +57,44 @@ h5 {
     font-size: var(--fs-200);
     font-weight: bold;
 }
+
+.wrapper {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 2.6fr 0.2fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header"
+        "header"
+        "main"
+        "footer";
+}
+
+.header {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 1.6fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "nav"
+        "hero";
+    grid-area: header;
+}
+
+.nav {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". .";
+    align-self: center;
+    grid-area: nav;
+}
+
+.hero { grid-area: hero; }
+
+.main { grid-area: main; }
+
+.footer { grid-area: footer; }
