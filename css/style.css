@@ -1,0 +1,59 @@
+@import "reset.css";
+@import "modern-normalize.css";
+
+:root {
+    --clr-text: hsl(150, 80%, 4%);
+    --clr-background: hsl(153, 73%, 97%);
+    --clr-primary: hsl(146, 76%, 55%);
+    --clr-secondary: hsl(209, 76%, 71%);
+    --clr-accent: hsl(229, 79%, 78%);
+
+    --clr-neutral-200: hsl(0, 0%, 90%);
+    --clr-success: hsl(143, 100%, 26%);
+    --clr-warning: hsl(43, 100%, 66%);
+    --clr-error: hsl(348, 55%, 49%);
+
+    /* --fs--2: clamp(0.6944rem, 0.6021rem + 0.4618vw, 0.96rem);
+    --fs--1: clamp(0.8333rem, 0.7058rem + 0.6377vw, 1.2rem); */
+    --fs-100: clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem);
+    --fs-200: clamp(1.2rem, 0.9652rem + 1.1739vw, 1.875rem);
+    --fs-300: clamp(1.44rem, 1.1257rem + 1.5717vw, 2.3438rem);
+    --fs-400: clamp(1.728rem, 1.31rem + 2.0899vw, 2.9297rem);
+    --fs-500: clamp(2.0736rem, 1.5211rem + 2.7626vw, 3.6621rem);
+    --fs-600: clamp(2.4883rem, 1.7616rem + 3.6336vw, 4.5776rem);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: hsl(150, 80%, 96%);
+        --background: hsl(153, 73%, 3%);
+        --primary: hsl(146, 76%, 45%);
+        --secondary: hsl(209, 76%, 29%);
+        --accent: hsl(229, 79%, 22%);
+    }
+}
+
+h1 {
+    font-size: var(--fs-600);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: var(--fs-500);
+    font-weight: bold;
+}
+
+h3 {
+    font-size: var(--fs-400);
+    font-weight: bold;
+}
+
+h4 {
+    font-size: var(--fs-300);
+    font-weight: bold;
+}
+
+h5 {
+    font-size: var(--fs-200);
+    font-weight: bold;
+}
