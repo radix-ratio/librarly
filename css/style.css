@@ -25,11 +25,11 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text: hsl(150, 80%, 96%);
-        --background: hsl(153, 73%, 3%);
-        --primary: hsl(146, 76%, 45%);
-        --secondary: hsl(209, 76%, 29%);
-        --accent: hsl(229, 79%, 22%);
+        --clr-text: hsl(150, 80%, 96%);
+        --clr-background: hsl(153, 73%, 3%);
+        --clr-primary: hsl(146, 76%, 45%);
+        --clr-secondary: hsl(209, 76%, 29%);
+        --clr-accent: hsl(229, 79%, 22%);
     }
 }
 
@@ -58,6 +58,15 @@ h5 {
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-size: var(--fs-100);
+}
+
 .wrapper {  
     display: grid;
     grid-template-columns: 1fr;
@@ -74,31 +83,50 @@ h5 {
     min-height: 100dvh;
 }
 
+.center {
+    width: min(65ch, 100% - 4rem);
+    margin-inline: auto;
+}
+
+.box-sh {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);   
+}
+
+.logo {
+    font-size: var(--fs-300);
+    font-weight: bold;
+}
+
+.clr-sec {
+    color: var(--clr-secondary);
+}
+
+.p-b {
+    padding-bottom: 1rem;
+}
+
+/* header */
 .header {  
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 1.5fr;
-    gap: 1rem;
+    gap: 3rem;
     grid-auto-flow: row;
     grid-template-areas:
         "nav"
         "hero";
     grid-area: header;
+    height: fit-content;
 }
 
 .nav {  
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1rem;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". .";
-    align-self: center;
     grid-area: nav;
 }
 
-.hero { grid-area: hero; }
+.hero { 
+    grid-area: hero; 
+
+}
 
 .main { grid-area: main; }
 
