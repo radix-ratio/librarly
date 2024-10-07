@@ -6,7 +6,7 @@
     --clr-background: hsl(153, 73%, 97%);
     --clr-primary: hsl(146, 76%, 55%);
     --clr-secondary: hsl(209, 76%, 71%);
-    --clr-accent: hsl(229, 79%, 78%);
+    --clr-accent: hsl(273, 49%, 55%);
 
     --clr-neutral-200: hsl(0, 0%, 90%);
     --clr-success: hsl(143, 100%, 26%);
@@ -29,7 +29,7 @@
         --clr-background: hsl(153, 73%, 3%);
         --clr-primary: hsl(146, 76%, 45%);
         --clr-secondary: hsl(209, 76%, 29%);
-        --clr-accent: hsl(229, 79%, 22%);
+        --clr-accent: hsl(305, 79%, 40%);
     }
 }
 
@@ -97,8 +97,22 @@ body {
     font-weight: bold;
 }
 
+.btn {
+    padding: 0.6125rem 1.125rem;
+    border-radius: 0.5rem;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: var(--fs-100);
+    width: fit-content;
+}
+
 .clr-sec {
     color: var(--clr-secondary);
+}
+
+.clr-acc{
+    color: var(--clr-accent);
 }
 
 .p-b {
@@ -125,7 +139,16 @@ body {
 
 .hero { 
     grid-area: hero; 
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 2.5rem;
+    border-bottom: 1px solid var(--clr-neutral-200);
+    padding-bottom: 1rem;
+}
 
+.hero > * {
+    justify-self: center;
 }
 
 .main { grid-area: main; }
