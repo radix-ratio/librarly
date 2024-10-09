@@ -131,8 +131,8 @@ body {
     color: var(--clr-accent);
 }
 
-.bg-s {
-    background-color: var(--clr-success);
+.bg-pri {
+    background-color: var(--clr-primary);
 }
 
 .bg-n-3 {
