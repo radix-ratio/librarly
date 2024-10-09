@@ -119,6 +119,10 @@ body {
     color: var(--clr-background);
 }  
 
+.btn-wide:hover {
+    transform: scale(1.1);
+}
+
 .clr-pri {
     color: var(--clr-primary);
 }
