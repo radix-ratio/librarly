@@ -27,3 +27,6 @@ function Book(title, author, pages) {
     }
 }
 
+function addBookToLibrary(newBook) {
+    myLibrary.push(newBook);
+}
