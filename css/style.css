@@ -14,8 +14,8 @@
     --clr-warning: hsla(43, 100%, 66%, 0.76);
     --clr-error: hsla(348, 55%, 49%, 0.76);
 
-    /* --fs--2: clamp(0.6944rem, 0.6021rem + 0.4618vw, 0.96rem);
-    --fs--1: clamp(0.8333rem, 0.7058rem + 0.6377vw, 1.2rem); */
+    /* --fs--2: clamp(0.6944rem, 0.6021rem + 0.4618vw, 0.96rem); */
+    --fs-0: clamp(0.8333rem, 0.7058rem + 0.6377vw, 1.2rem);
     --fs-100: clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem);
     --fs-200: clamp(1.2rem, 0.9652rem + 1.1739vw, 1.875rem);
     --fs-300: clamp(1.44rem, 1.1257rem + 1.5717vw, 2.3438rem);
@@ -89,6 +89,25 @@ body {
     margin-inline: auto;
 }
 
+.middle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.even-col-grid {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.5rem;
+}
+.even-col-flex {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+}
+
 .box-sh {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);   
 }
@@ -106,6 +125,7 @@ body {
     font-weight: bold;
     font-size: var(--fs-100);
     width: fit-content;
+    color:var(--clr-background)
 }
 
 .btn-wide {
@@ -135,6 +155,10 @@ body {
     color: var(--clr-accent);
 }
 
+.clr-n-200 {
+    color: var(--clr-neutral-200);
+}
+
 .bg-pri {
     background-color: var(--clr-primary);
 }
@@ -143,12 +167,21 @@ body {
     background-color: var(--clr-neutral-300);
 }
 
+.bg-er {
+    background-color: var(--clr-error);
+}
+
 .p-b {
     padding-bottom: 1.5rem;
 }
 
 .p-bl {
     padding-block: 1rem;
+}
+
+.br-b {
+    border-bottom: 2px solid var(--clr-neutral-200);
+    padding-bottom: 1rem;
 }
 
 /* header */
@@ -182,18 +215,46 @@ body {
     justify-self: center;
 }
 
-
-
-dialog::backdrop {
-    background: black;
-    filter: opacity(0.7);
-    
-}
-
 /* main */
 .main { 
     grid-area: main;
     padding-inline: 4rem;
+}
+
+dialog::backdrop {
+    background: black;
+    filter: opacity(0.7);
+}
+
+dialog {
+    border: none;
+    border-radius: 1rem;
+}
+
+
+.form{
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-flow: row;
+    padding: 2rem;
+}
+
+.form > div {
+    font-size: var(--fs-0);
+}
+
+.form input {
+    border: 1px solid var(--clr-neutral-200);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-0);
+    font-weight: 500;
+}
+
+.form input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--clr-accent);
 }
 
 .books {
