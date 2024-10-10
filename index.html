@@ -23,22 +23,30 @@
                     Easy library app for your books.
                     Add books you've read or are interested in.
                 </p>
-                <button class="btn clr-acc" onclick="window.dialog.showModal()">Add book</button>
+                <button class="btn clr-acc" onclick="window.dialog.showModal()">+ New book</button>
                 
             </section>
         </header>
         <main class="main">
-            <dialog id="dialog">
-                <form method="dialog">
-                    <h2>Rollercoasters</h2>
-                    <p>cool, right?</p>
-                    <menu>
-                        <button>Yah.</button>
-                    </menu>
+            <dialog id="dialog" class="middle">
+                
+                <form method="dialog" class="form">
+                    <h4 class="br-b">Add a new book</h4>
+                    <input required type="text" name="title" id="title" placeholder="title">
+                    <input required type="text" name="author" id="author" placeholder="author">
+                    <input required type="number" name="pages" id="pages" placeholder="number of pages">
+                    <div class="even-col-flex p-b">
+                        <input type="checkbox" name="read" id="read">
+                        Read
+                    </div>
+                    <div class="even-col-grid">
+                        <button type="submit" class="btn bg-pri">Add Book</button>
+                        <button type="reset" onclick="window.dialog.close()" class="btn bg-er">Cancel</button>
+                    </div>
+                    
                 </form>
             </dialog>
             <section data-block="books" class="books center">
-                
                 <div class="book-card">
                     <h4>Book Title</h4>
                     <p>Book Author</p>
