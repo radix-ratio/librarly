@@ -37,7 +37,10 @@ function addBookToLibrary(newBook) {
 }
 
 function clearAddingBooksForm() {
-    document.querySelector('[data-block="dialog"]').reset();
+    const dialogForm = document.querySelector('#dialog >.form');
+
+    dialogForm.reset();
+    window.dialog.close()
 }
 
 function getNewBookData() {
@@ -55,12 +58,14 @@ function getNewBookData() {
     );
 
     clearAddingBooksForm();
+
     return newBook;
 }
 
 function addNewBook() {
     const newBook = getNewBookData();
     addBookToLibrary(newBook);
+    showOneBook(newBook);
 }
 
 function createBookCardTemplate(book) {
@@ -74,10 +79,9 @@ function createBookCardTemplate(book) {
             <button class="btn-wide bg-n-3">Delete</button>
         </div>
     `;
-    
+
     return bookCardTemplate;
 }
-
 
 function showBooks() {
     const booksSection = document.querySelector('[data-block="books"]');
@@ -88,6 +92,3 @@ function showBooks() {
     });
 }
 
-
-
-showBooks();
