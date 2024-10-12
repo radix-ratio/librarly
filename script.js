@@ -57,3 +57,22 @@ function addNewBook() {
     const newBook = getNewBookData();
     addBookToLibrary(newBook);
 }
+
+function createBookCardTemplate(book) {
+    const bookCardTemplate = `
+        <div class="book-card">
+            <h4>${book.title}</h4>
+            <p>${book.author}</p>
+            <p>Pages: ${book.pages}</p>
+            
+            <button class="btn-wide bg-pri">Read</button>
+            <button class="btn-wide bg-n-3">Delete</button>
+        </div>
+    `;
+    
+    return bookCardTemplate;
+}
+
+
+
+showBooks();
