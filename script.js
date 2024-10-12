@@ -4,17 +4,20 @@ const myLibrary = [
     {
         title: 'The Hobbit',
         author: 'J.R.R. Tolkien',
-        pages: 295
+        pages: 295,
+        read: true
     },
     {
         title: 'Harry Potter',
         author: 'J.K. Rowling',
-        pages: 400
+        pages: 400,
+        read: false
     },  
     {
         title: 'Lord of the Rings',
         author: 'J.R.R. Tolkien',
-        pages: 700
+        pages: 700,
+        read: true
     }
 ];
 
@@ -28,11 +31,12 @@ function Book(title, author, pages, read) {
     }
 }
 
+
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 }
 
-function getNewBookInfo() {
+function getNewBookData() {
     const title = document.getElementById('title');
     const author = document.getElementById('author');
     const pages = document.getElementById('pages');
@@ -42,9 +46,12 @@ function getNewBookInfo() {
     const newBook = new Book(
         title.value,
         author.value,
-        pages.value,
-        read.value
+        parseInt(pages.value),
+        read.checked
     );
+}
 
+function addNewBook() {
+    getNewBookData();
     addBookToLibrary(newBook);
 }
