@@ -92,3 +92,9 @@ function showBooks() {
     });
 }
 
+function showOneBook(newBook) {
+    const booksSection = document.querySelector('[data-block="books"]');
+    const bookCardTemplate = createBookCardTemplate(newBook);
+    booksSection.innerHTML += bookCardTemplate;
+}
+
