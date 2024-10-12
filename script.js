@@ -54,6 +54,7 @@ function getNewBookData() {
         read.checked
     );
 
+    clearAddingBooksForm();
     return newBook;
 }
 
