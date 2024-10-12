@@ -98,3 +98,5 @@ function showOneBook(newBook) {
     booksSection.innerHTML += bookCardTemplate;
 }
 
+
+window.loaded = showBooks();
