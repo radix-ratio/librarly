@@ -1,24 +1,9 @@
 'use strict';
     
 const myLibrary = [
-    {
-        title: 'The Hobbit',
-        author: 'J.R.R. Tolkien',
-        pages: 295,
-        read: true
-    },
-    {
-        title: 'Harry Potter',
-        author: 'J.K. Rowling',
-        pages: 400,
-        read: false
-    },  
-    {
-        title: 'Lord of the Rings',
-        author: 'J.R.R. Tolkien',
-        pages: 700,
-        read: true
-    }
+    new Book('The Lord of the Rings', 'J.R.R. Tolkien', 700, true),
+    new Book('Harry Potter', 'J.K. Rowling', 400, true),
+    new Book('The Hobbit', 'J.R.R. Tolkien', 300, true),
 ];
 
 function Book(title, author, pages, read) {
