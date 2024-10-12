@@ -32,3 +32,19 @@ function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 }
 
+function getNewBookInfo() {
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const pages = document.getElementById('pages');
+    const read = document.getElementById('read');
+
+
+    const newBook = new Book(
+        title.value,
+        author.value,
+        pages.value,
+        read.value
+    );
+
+    addBookToLibrary(newBook);
+}
