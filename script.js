@@ -36,6 +36,10 @@ function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 }
 
+function clearAddingBooksForm() {
+    document.querySelector('[data-block="dialog"]').reset();
+}
+
 function getNewBookData() {
     const title = document.getElementById('title');
     const author = document.getElementById('author');
