@@ -74,5 +74,15 @@ function createBookCardTemplate(book) {
 }
 
 
+function showBooks() {
+    const booksSection = document.querySelector('[data-block="books"]');
+
+    myLibrary.forEach(book => {
+        const bookCardTemplate = createBookCardTemplate(book);
+        booksSection.innerHTML += bookCardTemplate;
+    });
+}
+
+
 
 showBooks();
