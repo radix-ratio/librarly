@@ -49,9 +49,11 @@ function getNewBookData() {
         parseInt(pages.value),
         read.checked
     );
+
+    return newBook;
 }
 
 function addNewBook() {
-    getNewBookData();
+    const newBook = getNewBookData();
     addBookToLibrary(newBook);
 }
