@@ -139,7 +139,8 @@ body {
     color: var(--clr-background);
 }  
 
-.btn-wide:hover {
+.btn-wide:hover,
+.btn-wide:focus {
     transform: scale(1.1);
 }
 
