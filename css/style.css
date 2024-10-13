@@ -148,6 +148,7 @@ body {
 .btn-wide:hover,
 .btn-wide:focus {
     transform: scale(1.1);
+    transition: transform ease 0.3s;
 }
 
 .clr-pri {
