@@ -94,17 +94,14 @@ function showOneBook(newBook) {
     booksSection.innerHTML += bookCardTemplate;
 }
 
-window.loaded = showBooks();
-
 function toggleReadingStatus(event) {
     if (event.classList.contains('bg-pri')) {
         event.classList.remove('bg-pri');
         event.classList.add('bg-er');
-        console.table(event.classList)
     } else if (event.classList.contains('bg-er')) {
         event.classList.remove('bg-er');
         event.classList.add('bg-pri');
-        console.table(event.classList)
     }
 }
 
+window.loaded = showBooks();
