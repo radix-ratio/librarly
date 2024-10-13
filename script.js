@@ -54,18 +54,29 @@ function addNewBook() {
 }
 
 function createBookCardTemplate(book) {
-    const bookCardTemplate = `
+    let bookCardTemplateInfo = `
         <div class="book-card">
             <h4>${book.title}</h4>
             <p>${book.author}</p>
             <p>Pages: ${book.pages}</p>
-            
-            <button class="btn-wide bg-pri">Read</button>
-            <button class="btn-wide bg-n-3">Delete</button>
-        </div>
+        
     `;
 
-    return bookCardTemplate;
+    if (book.read) {
+        bookCardTemplateInfo += `
+                <button onclick="toggleReadingStatus(this)" class="btn-wide bg-pri">Read</button>
+        `;
+    } else {
+        bookCardTemplateInfo += `
+                <button onclick="toggleReadingStatus(this)" class="btn-wide bg-er">Read</button>
+        `;
+    }
+
+    bookCardTemplateInfo += `
+        <button class="btn-wide bg-n-3">Delete</button>
+    </div>`;
+
+    return bookCardTemplateInfo;
 }
 
 function showBooks() {
@@ -83,5 +94,17 @@ function showOneBook(newBook) {
     booksSection.innerHTML += bookCardTemplate;
 }
 
-
 window.loaded = showBooks();
+
+function toggleReadingStatus(event) {
+    if (event.classList.contains('bg-pri')) {
+        event.classList.remove('bg-pri');
+        event.classList.add('bg-er');
+        console.table(event.classList)
+    } else if (event.classList.contains('bg-er')) {
+        event.classList.remove('bg-er');
+        event.classList.add('bg-pri');
+        console.table(event.classList)
+    }
+}
+
