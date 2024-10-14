@@ -58,7 +58,6 @@ function addNewBook() {
         newBook.author.length > 0 &&
         newBook.pages > 0 
         ) {
-            console.log(newBook);
             addBookToLibrary(newBook);
             showOneBook(newBook);
         }
@@ -70,7 +69,7 @@ function createBookCardTemplate(book) {
         <div class="book-card">
             <h4>${book.title}</h4>
             <p>${book.author}</p>
-            <p>Pages: ${book.pages}</p>
+            <p>Pages: <span>${book.pages}</span></p>
         
     `;
 
@@ -119,5 +118,20 @@ function toggleReadingStatus(event) {
 window.loaded = showBooks();
 
 function removeBookCard(obj) {
+    removeBookFromLibrary(obj);
     obj.parentNode.remove();
 }
+
+function removeBookFromLibrary(obj) {
+    const card = obj.parentNode;
+    const title = card.querySelector('h4').textContent;
+    const author = card.querySelector('p').textContent;
+    const pages = card.querySelector('span').textContent;
+
+    for (let book of myLibrary) {
+        if (book.title === title && book.author === author && parseInt(book.pages) === parseInt(pages)) {
+            myLibrary.splice(myLibrary.indexOf(book), 1);
+        } 
+    }
+}   
+
