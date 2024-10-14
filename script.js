@@ -29,11 +29,15 @@ function clearAddingBooksForm() {
 }
 
 function getNewBookData() {
+    const form = document.querySelector('#dialog >.form');
+    if (!form.checkValidity()) {
+        return;
+    }
+
     const title = document.getElementById('title');
     const author = document.getElementById('author');
     const pages = document.getElementById('pages');
     const read = document.getElementById('read');
-
 
     const newBook = new Book(
         title.value,
@@ -49,8 +53,16 @@ function getNewBookData() {
 
 function addNewBook() {
     const newBook = getNewBookData();
-    addBookToLibrary(newBook);
-    showOneBook(newBook);
+    if (
+        newBook.title.length > 0 && 
+        newBook.author.length > 0 &&
+        newBook.pages > 0 
+        ) {
+            console.log(newBook);
+            addBookToLibrary(newBook);
+            showOneBook(newBook);
+        }
+    
 }
 
 function createBookCardTemplate(book) {
@@ -73,7 +85,7 @@ function createBookCardTemplate(book) {
     }
 
     bookCardTemplateInfo += `
-        <button class="btn-wide bg-n-3">Delete</button>
+        <button onclick="removeBookCard(this)" class="btn-wide bg-n-3">Delete</button>
     </div>`;
 
     return bookCardTemplateInfo;
@@ -105,3 +117,7 @@ function toggleReadingStatus(event) {
 }
 
 window.loaded = showBooks();
+
+function removeBookCard(obj) {
+    obj.parentNode.remove();
+}
