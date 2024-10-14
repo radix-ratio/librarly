@@ -32,15 +32,15 @@
                 
                 <form method="dialog" class="form">
                     <h4 class="br-b">Add a new book</h4>
-                    <input required type="text" name="title" id="title" placeholder="title">
-                    <input required type="text" name="author" id="author" placeholder="author">
-                    <input required type="number" name="pages" id="pages" placeholder="number of pages">
+                    <input required minlength="1" type="text" name="title" id="title" placeholder="title">
+                    <input required minlength="1" type="text" name="author" id="author" placeholder="author">
+                    <input required min="1" type="number" name="pages" id="pages" placeholder="number of pages">
                     <div class="even-col-flex p-b">
                         <input type="checkbox" name="read" id="read">
                         Read
                     </div>
                     <div class="even-col-grid">
-                        <button type="submit" onclick="addNewBook()" class="btn bg-pri">Add Book</button>
+                        <button type="submit" onclick="addNewBook()" class="btn bg-pri">Add a Book</button>
                         <button type="reset" onclick="window.dialog.close()" class="btn bg-er">Cancel</button>
                     </div>
                     
