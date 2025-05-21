@@ -1,21 +1,23 @@
 'use strict';
     
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.info = function() {
+            return `${this.title} by ${this.author}, ${this.pages} pages`;
+        }
+    }
+}
+
 const myLibrary = [
     new Book('The Lord of the Rings', 'J.R.R. Tolkien', 700, true),
     new Book('Harry Potter', 'J.K. Rowling', 400, true),
     new Book('The Hobbit', 'J.R.R. Tolkien', 300, true),
 ];
-
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages`;
-    }
-}
-
 
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
