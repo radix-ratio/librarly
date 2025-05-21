@@ -16,7 +16,7 @@ This project is a basic implementation of a Library with, allowing users to crea
 
 ## Demo
 
-[**Live Demo**](https://radix-ratio.github.io/librarly) | [**Project Specs**](https://www.theodinproject.com/lessons/node-path-javascript-library)
+[**Live Demo**](https://kacper-korzen.github.io/librarly) | [**Project Specs**](https://www.theodinproject.com/lessons/node-path-javascript-library)
 
 ## Screenshots
 
@@ -38,4 +38,4 @@ This project is licensed under the MIT License. See [`LICENSE`](https://chooseal
 
 ## Authors
 
-- [@radix-ratio](https://www.github.com/radix-ratio)
+- [@Kacper K](https://www.github.com/kacper-korzen)
